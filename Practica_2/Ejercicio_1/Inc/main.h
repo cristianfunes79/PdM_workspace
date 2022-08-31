@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
-  * @file    UART/UART_Printf/Inc/main.h
-  * @author  MCD Application Team
+  * @file    Practica_2/Ejercicio_1/Inc/main.h
+  * @author  Cristian Funes
   * @brief   Header for main.c module
   ******************************************************************************
   * @attention

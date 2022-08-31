@@ -2,9 +2,13 @@
   ******************************************************************************
   * @file    Practica_2/Ejercicio_1/Src/main.c
   * @author  Cristian Funes
-  * @brief   Este ejercicio es parte de la Practica 2 de la CESE. Consiste en
-  * 		 implementar las funciones necesarias para generar retardos no
-  * 		 bloqueantes.
+  * @brief   Este ejercicio es parte de la Practica 2 de la CESE. Consiste en:
+  * 		 Parte1:
+  * 		 	implementar las funciones necesarias para generar retardos no
+  * 		 	bloqueantes.
+  * 		 Parte2:
+  * 		 	hacer titilar periodicamente y de manera independiente los leds
+  * 		 	LED1 (100ms), LED2 (500ms) y LED3 (1000ms).
   ******************************************************************************
   * @attention
   *
