@@ -36,5 +36,12 @@ Implementar un programa que utilice retardos no bloqueantes y  haga titilar en f
 - LED2: 500 ms.
 - LED3: 1000 ms.
 
+## Practica 3
+### Ejercicio 1
+Crear un nuevo proyecto como copia del proyecto realizado en la practica 2. Crear una carpeta API, src, Inc y colocar alli las funciones de retardos no bloqueantes.
+
+### Ejercicio 2
+Implementar el ejercicio de la Practica 1 usando retardos no bloqueantes.
+
 
 
