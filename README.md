@@ -43,5 +43,9 @@ Crear un nuevo proyecto como copia del proyecto realizado en la practica 2. Crea
 ### Ejercicio 2
 Implementar el ejercicio de la Practica 1 usando retardos no bloqueantes.
 
+## Practica 4
+### Ejercicio 1
+Implementar una MEF anti-rebote que permita leer el estado del pulsador de la placa NUCLEO-F429ZI y generar acciones o eventos ante un flanco descendiente o ascendente, de acuerdo al diagrama.
 
-
+### Ejercicio 2
+Implementar el Ejercicio anterior pero creando la MEF en modulos distintos.
