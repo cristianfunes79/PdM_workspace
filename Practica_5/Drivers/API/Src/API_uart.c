@@ -4,14 +4,19 @@
  *  Created on: Oct 11, 2022
  *      Author: cfunes
  */
+#include <stdlib.h>
+
 #include "API_uart.h"
 #include "main.h"
+
+#define MAX_BUFFER 128
 
 /* UART handler declaration */
 static UART_HandleTypeDef UartHandle;
 
 bool_t uartInit(void)
 {
+	char buffer[MAX_BUFFER];
 	/*##-1- Configure the UART peripheral ######################################*/
 	/* Put the USART peripheral in the Asynchronous mode (UART Mode) */
 	/* UART configured as follows:
@@ -31,7 +36,28 @@ bool_t uartInit(void)
 	UartHandle.Init.Mode       = UART_MODE_TX_RX;
 	UartHandle.Init.OverSampling = UART_OVERSAMPLING_16;
 
-	return (HAL_UART_Init(&UartHandle) != HAL_OK) ? false : true;
+	if (HAL_UART_Init(&UartHandle) != HAL_OK) return false;
+
+	uartSendString((uint8_t*)"-------------------------------------------\r\n");
+	uartSendString((uint8_t*)"UART Configuration\r\n");
+	uartSendString((uint8_t*)"BaudRate: ");
+	uartSendString((uint8_t*)itoa(UartHandle.Init.BaudRate, buffer, 10));
+	uartSendString((uint8_t*)"\r\nWordLength: ");
+	uartSendString((uint8_t*)itoa(UartHandle.Init.WordLength, buffer, 10));
+	uartSendString((uint8_t*)"\r\nStopBits: ");
+	uartSendString((uint8_t*)itoa(UartHandle.Init.StopBits, buffer, 10));
+	uartSendString((uint8_t*)"\r\nParity: ");
+	uartSendString((uint8_t*)itoa(UartHandle.Init.Parity, buffer, 10));
+	uartSendString((uint8_t*)"\r\nHwFlowCtl: ");
+	uartSendString((uint8_t*)itoa(UartHandle.Init.HwFlowCtl, buffer, 10));
+	uartSendString((uint8_t*)"\r\nMode: ");
+	uartSendString((uint8_t*)itoa(UartHandle.Init.Mode, buffer, 10));
+	uartSendString((uint8_t*)"\r\nOverSampling: ");
+	uartSendString((uint8_t*)itoa(UartHandle.Init.OverSampling, buffer, 10));
+	uartSendString((uint8_t*)"\r\n");
+	uartSendString((uint8_t*)"-------------------------------------------\r\n");
+
+	return true;
 }
 
 void uartSendString(uint8_t* pstring)
